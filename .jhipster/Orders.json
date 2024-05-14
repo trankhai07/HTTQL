@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20240512172908",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "orders",
+  "fields": [
+    {
+      "fieldName": "orderId",
+      "fieldType": "String",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "orderDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "customerId",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Orders",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

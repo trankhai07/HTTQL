@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20240512160916",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "order_customer_of_city_cube",
+  "fields": [
+    {
+      "fieldName": "cityName",
+      "fieldType": "String",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "officeAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orderedQuantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orderedCost",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "profit",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "OrderCustomerOfCityCube",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

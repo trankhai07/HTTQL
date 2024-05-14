@@ -1,0 +1,12 @@
+
+entity OrderCustomerOfCityCube {
+    @Id CityName String
+    OfficeAddress String
+    OrderedQuantity Integer
+    OrderedCost Integer
+    Profit Integer
+}
+
+paginate * with pagination
+service * with serviceClass
+

@@ -32,7 +32,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:sqlserver://KHAI-AD\KDL:1433;databaseName=Integration;encrypt=false
+    url: jdbc:sqlserver://KHAI-AD\KDL:1433;databaseName=datawarehouse;encrypt=false
     username: SA
     password: 12345
     hikari:
@@ -47,6 +47,7 @@ spring:
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
+    enabled: false
   mail:
     host: localhost
     port: 25
@@ -56,6 +57,9 @@ spring:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:
     cache: false
+  sql:
+    init:
+      mode:
 
 server:
   port: 8080

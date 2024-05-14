@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"
+         xmlns:th="http://www.w3.org/1999/XSL/Format">
+    <fo:layout-master-set>
+        <fo:simple-page-master master-name="A4"
+                               page-width="210mm" page-height="297mm"
+                               margin-top="1cm" margin-bottom="1cm"
+                               margin-left="1cm" margin-right="1cm">
+            <fo:region-body margin-top="7.5cm" margin="1cm" region-name="region-body"/>
+            <fo:region-before margin="1cm" extent="1cm" region-name="region-header"/>
+            <fo:region-after margin="1cm" extent="1cm" region-name="region-footer"/>
+            <fo:region-start margin="1cm" extent="1cm" region-name="region-left"/>
+            <fo:region-end margin="1cm" extent="1cm" region-name="region-right"/>
+        </fo:simple-page-master>
+    </fo:layout-master-set>
+
+    <fo:page-sequence master-reference="A4">
+        <fo:static-content flow-name="region-header">
+            <fo:block text-align="end" margin-bottom="20px">
+                <fo:external-graphic content-height="5%"
+                                     src="file:./src/main/resources/images/noBorder.jpg"/>
+            </fo:block>
+            <fo:block-container margin-bottom="3mm">
+                <fo:table width="100%">
+                    <fo:table-column column-width="40%"/>
+                    <fo:table-column column-width="40%"/>
+                    <fo:table-column column-width="10%"/>
+                    <fo:table-column column-width="10%"/>
+                    <fo:table-body>
+                        <fo:table-row>
+                            <fo:table-cell text-align="left" number-columns-spanned="4">
+                                <fo:block font-size="17pt" font-family="Times New Roman" font-weight="bold"
+                                          th:text="${orderCustomerOfCityMonth.nameCompany}"/>
+                            </fo:table-cell>
+                        </fo:table-row>
+                        <fo:table-row height="1.3cm">
+                            <fo:table-cell text-align="left" number-columns-spanned="4">
+                                <fo:block font-size="10pt" font-family="Times New Roman">96A Đường
+                                    Trần Phú, P. Mộ Lao, Hà Đông, Hà Nội, Vietnam
+                                </fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                        <fo:table-row>
+                            <fo:table-cell number-columns-spanned="4" text-align="center">
+                                <fo:block font-size="17pt" font-family="Times New Roman" font-weight="bold"
+                                          th:text="${orderCustomerOfCityMonth.nameStatistical}"/>
+                            </fo:table-cell>
+                        </fo:table-row>
+                        <fo:table-row height="1cm">
+                            <fo:table-cell text-align="center" number-columns-spanned="4">
+                                <fo:block font-size="10pt" font-family="Times New Roman">
+                                    Tháng
+                                    <fo:inline th:text="${orderCustomerOfCityMonth.month}"/>
+                                    Năm
+                                    <fo:inline th:text="${orderCustomerOfCityMonth.year}"/>
+                                </fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-body>
+                </fo:table>
+            </fo:block-container>
+        </fo:static-content>
+        <fo:flow flow-name="region-body" font-size="10pt">
+            <fo:table width="100%">
+                <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell text-align="right" number-columns-spanned="5">
+                            <fo:block font-size="10pt" font-style="italic" font-weight="bold"
+                                      font-family="Times New Roman">
+                                Đơn vị: VNĐ
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                </fo:table-body>
+            </fo:table>
+            <fo:block-container margin-bottom="2mm">
+                <fo:table width="100%">
+                    <fo:table-column column-width="16%"/>
+                    <fo:table-column column-width="20%"/>
+                    <fo:table-column column-width="20%"/>
+                    <fo:table-column column-width="22%"/>
+                    <fo:table-column column-width="22%"/>
+                    <fo:table-header border-style="solid" border-width="0.3mm">
+                        <fo:table-cell border-style="solid" padding="2mm"
+                                       border-width="0.3mm"
+                                       border-color="#cccccc"
+                                       font-size="12pt" text-align="center" background-color="#ad171c"
+                                       color="#ffffff"
+                                       font-weight="bold">
+                            <fo:block>Thành phố</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-style="solid" padding="2mm"
+                                       border-width="0.3mm"
+                                       border-color="#cccccc"
+                                       font-size="12pt" text-align="center" background-color="#ad171c"
+                                       color="#ffffff"
+                                       font-weight="bold">
+                            <fo:block>Khu vực</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-style="solid" padding="2mm"
+                                       border-width="0.3mm"
+                                       border-color="#cccccc"
+                                       font-size="12pt" text-align="center" background-color="#ad171c"
+                                       color="#ffffff"
+                                       font-weight="bold">
+                            <fo:block>Số lượng bán</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-style="solid" padding="2mm"
+                                       border-width="0.3mm"
+                                       border-color="#cccccc"
+                                       font-size="12pt" text-align="center" background-color="#ad171c"
+                                       color="#ffffff"
+                                       font-weight="bold">
+                            <fo:block>Doanh thu</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-style="solid" padding="2mm"
+                                       border-width="0.3mm"
+                                       border-color="#cccccc"
+                                       font-size="12pt" text-align="center" background-color="#ad171c"
+                                       color="#ffffff"
+                                       font-weight="bold">
+                            <fo:block>Lợi nhuận</fo:block>
+                        </fo:table-cell>
+                    </fo:table-header>
+                    <fo:table-body>
+                        <th:block th:each="city : ${orderCustomerOfCityMonth.orderCustomerOfCityMonthCubeList}">
+                            <fo:table-row border-style="solid" padding="2mm"
+                                          border-width="0.3mm"
+                                          border-color="#cccccc">
+                                <fo:table-cell border-style="solid" padding="2mm"
+                                               border-width="0.3mm"
+                                               border-color="#cccccc">
+                                    <fo:block th:text="${city.cityName}"/>
+                                </fo:table-cell>
+                                <fo:table-cell border-style="solid" padding="2mm"
+                                               border-width="0.3mm"
+                                               border-color="#cccccc">
+                                    <fo:block th:text="${city.state}"/>
+                                </fo:table-cell>
+                                <fo:table-cell border-style="solid" padding="2mm"
+                                               border-width="0.3mm"
+                                               border-color="#cccccc">
+                                    <fo:block th:text="${city.orderedQuantity}"/>
+                                </fo:table-cell>
+                                <fo:table-cell border-style="solid" padding="2mm"
+                                               border-width="0.3mm"
+                                               border-color="#cccccc">
+                                    <fo:block th:text="${city.orderedCost}"/>
+                                </fo:table-cell>
+                                <fo:table-cell border-style="solid" padding="2mm"
+                                               border-width="0.3mm"
+                                               border-color="#cccccc">
+                                    <fo:block th:text="${city.profit}"/>
+                                </fo:table-cell>
+
+                            </fo:table-row>
+                        </th:block>
+                    </fo:table-body>
+                </fo:table>
+                <fo:table width="50%" margin-top="0.5cm">
+                    <fo:table-column column-width="15%"/>
+                    <fo:table-column column-width="50%"/>
+                    <fo:table-column column-width="20%"/>
+                    <fo:table-column column-width="15%"/>
+                    <fo:table-body>
+                        <fo:table-row border-bottom-style="dotted" height="1cm">
+                            <fo:table-cell number-columns-spanned="2" text-align="left">
+                                <fo:block>
+                                    <fo:block padding="10px" font-size="13pt">Tổng số lượng đã bán:</fo:block>
+                                </fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell text-align="left">
+                                <fo:block th:text="${orderCustomerOfCityMonth.sumOrderedQuantity}" font-size="13pt"
+                                    padding="10px">
+                                </fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                        <fo:table-row border-bottom-style="dotted" height="1cm">
+                            <fo:table-cell number-columns-spanned="2" text-align="left">
+                                <fo:block>
+                                    <fo:block padding="10px" font-size="13pt">Tổng doanh thu:</fo:block>
+                                </fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell text-align="left">
+                                <fo:block>
+                                    <fo:block padding="10px" font-size="13pt" th:text="${orderCustomerOfCityMonth.sumOrderedCost}"/>
+                                </fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                        <fo:table-row height="1cm">
+                            <fo:table-cell number-columns-spanned="2" text-align="left">
+                                <fo:block>
+                                    <fo:block padding="10px" font-size="13pt">Tổng lợi nhuận:</fo:block>
+                                </fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell text-align="left">
+                                <fo:block>
+                                    <fo:block padding="10px" font-size="13pt"
+                                              th:text="${orderCustomerOfCityMonth.sumProfit}"/>
+                                </fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-body>
+                </fo:table>
+            </fo:block-container>
+            <fo:table width="100%">
+                <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell text-align="end" >
+                            <fo:block font-size="12pt" font-style="normal"
+                                      font-family="Times New Roman">
+                                Lập ngày.....tháng.....năm.....
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                </fo:table-body>
+            </fo:table>
+            <fo:block-container margin-top="0.8cm">
+                <fo:table width="100%">
+                    <fo:table-column column-width="33.33%"/>
+                    <fo:table-column column-width="33.33%"/>
+                    <fo:table-column column-width="33.33%"/>
+                    <fo:table-body>
+                        <fo:table-row>
+                            <fo:table-cell text-align="left">
+                                <fo:block  font-size="12pt" font-style="normal" font-weight="bold"
+                                           font-family="Times New Roman" >Người lâph biểu</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell text-align="left">
+                                <fo:block  font-size="12pt" font-style="normal" font-weight="bold"
+                                           font-family="Times New Roman">Kế toán trưởng</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell text-align="left">
+                                <fo:block  font-size="12pt" font-style="normal" font-weight="bold"
+                                           font-family="Times New Roman">Giám đốc</fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                        <fo:table-row>
+                            <fo:table-cell text-align="left">
+                                <fo:block  font-size="11pt" font-style="italic"
+                                           font-family="Times New Roman" >(Ký,họ tên)</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell text-align="left">
+                                <fo:block  font-size="11pt" font-style="italic"
+                                           font-family="Times New Roman">(Ký,họ tên)</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell text-align="left">
+                                <fo:block  font-size="11pt" font-style="italic"
+                                           font-family="Times New Roman">(Ký,họ tên,đóng dấu)</fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-body>
+                </fo:table>
+            </fo:block-container>
+        </fo:flow>
+    </fo:page-sequence>
+</fo:root>
